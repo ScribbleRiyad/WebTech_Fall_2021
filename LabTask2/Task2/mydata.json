@@ -1,0 +1,52 @@
+[
+    {
+        "firstName": "abc",
+        "lastName": "xyz",
+        "age": "23",
+        "designation": "junior programmer",
+        "language": "C++",
+        "email": "abc@gmail.com",
+        "password ": "1234",
+        "image": "files\/image1.jpg"
+    },
+    {
+        "firstName": null,
+        "lastName": null,
+        "email": "solutionaiub@gmail.com",
+        "age": "23",
+        "pwd": "qweryuioppl",
+        "languague": null,
+        "myfile": null,
+        "designation": "Senior Programmer"
+    },
+    {
+        "firstName": null,
+        "lastName": null,
+        "email": "frankistian007@gmail.com",
+        "age": "23",
+        "pwd": "qweryuioppl",
+        "languague": null,
+        "myfile": null,
+        "designation": "Senior Programmer"
+    },
+    {
+        "firstname": "MD RIYAD",
+        "lastname": "MAHMUD",
+        "email": "riyadmahmud003@gmail.com",
+        "age": "25",
+        "pwd": "ajkncxjkasncdkjs",
+        "languague": "PHP",
+        "myfile": "wallpaperflare.com_wallpaper (2).jpg",
+        "designation": "Project Lead"
+    },
+    {
+        "firstname": "Scribble ",
+        "lastname": "riyad",
+        "email": "scribbleriyad@gmail.com",
+        "age": "22",
+        "pwd": "asnjknakncjka",
+        "languague": "PHP",
+        "myfile": "my-photo.png",
+        "designation": "Senior Programmer"
+    }
+]
