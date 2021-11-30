@@ -1,4 +1,4 @@
 <?php
 
-header("location: view/Registration.php");
+header("location: view/registrationform.php");
 ?>
