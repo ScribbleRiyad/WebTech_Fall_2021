@@ -1,6 +1,6 @@
 
 <?php
-include('config.php');
+include('dbconfig.php');
 $Name='';
 $Department='';
 $JoiningDate='';
