@@ -1,85 +1,43 @@
-
-<?php
-include('dbconfig.php');
-$Name='';
-$Department='';
-$JoiningDate='';
-$Salary='';
-$id='';
-if(isset($_POST['search'])){
-    $id=$_POST['yourid'];
-    $stmt = "SELECT * FROM `employee` WHERE `ID`= '$id' ";
-    $sel=mysqli_query($con,$stmt);
-    if($row1 = mysqli_fetch_assoc($sel)){
-     $Name=$row1['Name'];
-     $Department=$row1['Department']; 
-     $JoiningDate=$row1['JoiningDate']; 
-     $Salary=$row1['Salary'];
-  }
-}
-
-if(isset($_POST['update']))
-{
-    $id=$_POST['uid'];
-    // echo $id;
-    $Name=$_POST['name'];
-    $Department=$_POST['department'];
-    $JoiningDate=$_POST['date'];
-    $Salary=$_POST['salary'];
-    $stmt1 = " UPDATE `employee` SET `Name`='$Name',`Department`='$Department',`JoiningDate`='$JoiningDate',`Salary`='$Salary' WHERE `ID` ='$id' ";
-    $update_q=mysqli_query($con,$stmt1);
-
-    if($update_q){
-       echo "Updated record!";
-      }
-    else{
-        echo "Please search your id first with correct value!!!";
-      }
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FTLabExam</title>
 
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Form Validation using a sample registration form</title>
+    <meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
+    <meta name="description"
+        content="This document is an example of JavaScript Form Validation using a sample registration form. " />
+    <link rel='stylesheet' href='js-form-validation.css' type='text/css' />
 </head>
-<body >
- <h1>Update employee</h1>
-    <form method="post" action="index.php" id="form1">
-             <p>Search by ID:</p>  
-             <p>               
-               <input type="text" id="yourid" name="yourid"  placeholder="Id" >
-             </p>
-            <input type="submit" id="search" name="search" value="Search" >
+
+<body onload="document.registration.userid.focus();">
+    <h1>Update Employee</h1>
+
+    <form name='registration' onSubmit="return formValidation()" method="get" action="search.php">
+        <label for="firstname">Search By ID:</label><br />
+        <input type="text" name="search" /><br /><br />
+        <input type="submit" name="search" value="Search" /><br /><br /><br />
 
     </form>
+    <label for="name">Name: </label><br />
+    <input type="text" name="name" title="Name must be more then 8 characters" /><br />
 
-  <form method="post" action="index.php" id="form2">   
-        <p>Name:</p>  
-             <p>               
-               <input type="text" id="name" name="name"  placeholder="Name" value="<?php echo $Name;?>">
-             </p>
-             <p>Department:</p>  
-             <p>               
-               <input type="text" id="department" name="department"  placeholder="department" value="<?php echo $Department;?>" >
-             </p>              
-            <p>Joining Date:</p>  
-             <p>      
+    <label for="department">Department: </label><br />
+    <input type="text" name="department" title="Department name must not be empty" /><br />
 
-               <input type="text" id="date" name="date"   value="<?php echo $JoiningDate;?>">
-             </p> 
-            <p>Salary:</p>  
-             <p>               
-               <input type="text" id="salary" name="salary"  placeholder="Salary" value="<?php echo $Salary;?>">
-             </p> 
-            <input type="submit" id="update" name="update" value="Update" >
-            <input type="hidden" name="uid" value="<?php echo $id;?>">
-        </form>
+    <label for="joiningdate">Joinning Date: </label><br />
+    <input type="date" name="date" value="dd/mm/yyyy" title="Joining data must not be empty" /><br />
 
-    </body>
+    <label for="salary">Salary: </label><br />
+    <input type="text" name="salary" title="Salary must be numeric" /><br /><br />
+
+
+    <input type="submit" name="update" value="Update" /></li>
+    <script src="index.js"/>
+    <div>
+        <?php include 'search.php';?>
+    </div>
+
+</body>
+
 </html>
